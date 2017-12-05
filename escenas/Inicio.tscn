@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://scripts/IniciarPartida.gd" type="Script" id=1]
+[ext_resource path="res://assets/fuentes/cabin-sketch.fnt" type="BitmapFont" id=2]
+[ext_resource path="res://assets/graficos/tiles/cuadros.tres" type="TileSet" id=3]
+[ext_resource path="res://assets/graficos/granadito-andar0.png" type="Texture" id=4]
+
+[node name="Node2D" type="Node2D"]
+
+script/script = ExtResource( 1 )
+tiempo = 30
+
+[node name="Label" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 103.0
+margin/top = 50.0
+margin/right = 931.0
+margin/bottom = 502.0
+custom_fonts/font = ExtResource( 2 )
+text = "Hola, Granadito. Quizás no recuerdes qué haces en este lugar, pero te refresco la mente:
+necesitas 12 puntos para mantener la granja de donde provienes. Tienes 60 segundos para conseguirlo. Después, podrás salir del laberinto. ¡Suerte! "
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="pulsaEspacio" type="Label" parent="."]
+
+visibility/visible = false
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 103.0
+margin/top = 480.0
+margin/right = 931.0
+margin/bottom = 562.0
+custom_fonts/font = ExtResource( 2 )
+text = "(Pulsa espacio para continuar)"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="TileMap" type="TileMap" parent="."]
+
+mode = 0
+tile_set = ExtResource( 3 )
+cell/size = Vector2( 64, 64 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray( 0, 0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 6, 0, 7, 0, 8, 0, 9, 0, 10, 0, 11, 0, 12, 0, 13, 0, 14, 0, 15, 0, 65536, 0, 65551, 0, 131072, 0, 131087, 0, 196608, 0, 196623, 0, 262144, 0, 262159, 0, 327680, 0, 327695, 0, 393216, 0, 393231, 0, 458752, 0, 458767, 0, 524288, 0, 524289, 0, 524302, 0, 524303, 0, 655359, 0, 589824, 0, 589825, 0, 589826, 0, 589827, 0, 589828, 0, 589829, 0, 589830, 0, 589831, 0, 589832, 0, 589833, 0, 589834, 0, 589835, 0, 589836, 0, 589837, 0, 589838, 0, 589839, 0 )
+
+[node name="granadito-andar0" type="Sprite" parent="."]
+
+transform/pos = Vector2( 755, 524 )
+transform/scale = Vector2( 1.625, 1.625 )
+texture = ExtResource( 4 )
+
+

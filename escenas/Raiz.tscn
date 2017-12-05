@@ -1,0 +1,138 @@
+[gd_scene load_steps=8 format=1]
+
+[ext_resource path="res://escenas/Raiz.gd" type="Script" id=1]
+[ext_resource path="res://assets/graficos/tiles/cuadros.tres" type="TileSet" id=2]
+[ext_resource path="res://escenas/GranaditoKinetick.tscn" type="PackedScene" id=3]
+[ext_resource path="res://escenas/Manolitro.tscn" type="PackedScene" id=4]
+[ext_resource path="res://escenas/Oro.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/fuentes/cabin-sketch.fnt" type="BitmapFont" id=6]
+[ext_resource path="res://assets/graficos/tiles/tiles2.png" type="Texture" id=7]
+
+[node name="Raiz" type="Node2D"]
+
+script/script = ExtResource( 1 )
+tiempo = 60
+puntos = 0
+necesario = 12
+
+[node name="TileMap" type="TileMap" parent="."]
+
+transform/pos = Vector2( -1, 211 )
+mode = 0
+tile_set = ExtResource( 2 )
+cell/size = Vector2( 64, 64 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray( -262144, 0, -262143, 0, -262142, 0, -262141, 0, -262140, 0, -262139, 0, -262138, 0, -262137, 0, -262136, 0, -262135, 0, -262134, 0, -262133, 0, -262132, 0, -262131, 0, -262130, 0, -262129, 0, -196608, 0, -196600, 0, -196594, 0, -196593, 0, -131072, 0, -131071, 0, -131070, 0, -131069, 0, -131068, 0, -131067, 0, -131066, 0, -131065, 0, -131064, 0, -131063, 0, -131062, 0, -131061, 0, -131060, 0, -131059, 0, -131058, 0, -131057, 0, -65536, 0, -65521, 0, 0, 0, 10, 0, 11, 1, 12, 0, 13, 0, 15, 0, 65536, 0, 65542, 0, 65546, 0, 65549, 0, 65551, 0, 131072, 0, 131073, 0, 131074, 1, 131075, 0, 131076, 0, 131077, 1, 131078, 0, 131079, 0, 131080, 0, 131081, 1, 131082, 0, 131085, 0, 131086, 1, 131087, 0, 196608, 0, 196612, 0, 196623, 0, 262144, 0, 262148, 0, 262151, 0, 262156, 0, 262159, 0, 327680, 0, 327681, 0, 327682, 0, 327683, 0, 327684, 0, 327685, 0, 327686, 0, 327687, 0, 327688, 0, 327689, 0, 327690, 0, 327691, 0, 327692, 0, 327693, 0, 327694, 0, 327695, 0 )
+
+[node name="Granadito" parent="." instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 265, 176 )
+
+[node name="Manolitro" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 496, 162 )
+
+[node name="Manolitro1" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 379, 459 )
+
+[node name="Manolitro2" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 768, 374 )
+
+[node name="Oro" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 415, 255 )
+
+[node name="Puntos" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 89.0
+margin/top = 25.0
+margin/right = 353.0
+margin/bottom = 77.0
+custom_fonts/font = ExtResource( 6 )
+text = "Puntuación: 0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Tiempo" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 596.0
+margin/top = 25.0
+margin/right = 775.0
+margin/bottom = 77.0
+custom_fonts/font = ExtResource( 6 )
+text = "Tiempo:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="final" type="Node2D" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 469, 252 )
+
+[node name="fondo" type="Sprite" parent="final"]
+
+transform/pos = Vector2( 24, 37 )
+transform/scale = Vector2( 21, 11.375 )
+texture = ExtResource( 7 )
+modulate = Color( 0, 0.894531, 0.0349426, 1 )
+
+[node name="textoFinal" type="Label" parent="final"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+margin/left = -296.0
+margin/top = -68.0
+margin/right = 349.0
+margin/bottom = 207.0
+custom_fonts/font = ExtResource( 6 )
+text = "dasd"
+align = 1
+autowrap = true
+clip_text = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label" type="Label" parent="final"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -301.0
+margin/top = -123.0
+margin/right = 353.0
+margin/bottom = -44.0
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0.845592, 0.176147, 0.867188, 1 )
+text = "Fin del juego"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+
